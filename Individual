@@ -554,3 +554,78 @@ const styles = StyleSheet.create({
   },
 });
 
+
+
+Instituto federal do amazonas
+professor:ranyere lima
+aluno: Carlos Saraiva
+data:05/05/26
+bimestre: 2° bimestre
+nesta atividade feita com react native no snack exibe um pequeno formulario que pede informações como cpf, nome email e um botão para se inscrever
+import React, { useState } from 'react'; // Importa o React e o hook useState (para guardar dados)
+import { View, Text, TextInput, Button, StyleSheet, Alert } from 'react-native'; // Importa componentes da tela
+
+export default function App() { // Função principal do app
+
+const [nome, setNome] = useState(''); // Cria variável "nome" (começa vazia)
+const [email, setEmail] = useState(''); // Cria variável "email"
+const [cpf, setCpf] = useState(''); // Cria variável "cpf"
+
+const enviar = () => { // Função chamada ao clicar no botão
+
+if (!nome || !email || !cpf) { // Verifica se algum campo está vazio
+Alert.alert("Erro", "Preencha todos os campos!"); // Mostra alerta de erro
+return; // Para a execução aqui
+}
+
+Alert.alert("Sucesso", "Inscrição realizada!"); // Mostra mensagem de sucesso
+};
+
+return ( // O que aparece na tela
+<View style={styles.container}> {/* Container principal */}
+
+<Text style={styles.titulo}>Inscreva-se</Text> {/* Título */}
+
+<TextInput
+style={styles.input} // Estilo do campo
+placeholder="Nome" // Texto de dica dentro do campo
+value={nome} // Valor atual do campo
+onChangeText={setNome} // Atualiza o valor ao digitar
+/>
+
+<TextInput
+style={styles.input}
+placeholder="E-mail"
+value={email}
+onChangeText={setEmail}
+/>
+
+
+<Button
+title="Inscreva-se" // Texto do botão
+onPress={enviar} // Função executada ao clicar
+/>
+
+</View>
+);
+}
+
+const styles = StyleSheet.create({ // Cria os estilos
+container: {
+flex: 1, // Ocupa a tela toda
+padding: 20, // Espaço interno
+justifyContent: 'center', // Centraliza verticalmente
+},
+titulo: {
+fontSize: 24, // Tamanho do texto
+marginBottom: 20, // Espaço abaixo
+textAlign: 'center', // Centraliza o texto
+},
+input: {
+borderWidth: 1, // Espessura da borda
+borderColor: '#ccc', // Cor da borda
+padding: 10, // Espaço interno
+marginBottom: 15, // Espaço entre inputs
+borderRadius: 5, // Cantos arredondados
+},
+});
