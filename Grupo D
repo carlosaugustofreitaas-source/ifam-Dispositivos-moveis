@@ -189,3 +189,61 @@ const styles = StyleSheet.create({
   },
 
 });
+
+
+///Sua primeira tela
+Data:05/05/2026
+Nome:Carlos, Raquel, Felipe
+descrição: criar uma tela usando snack.
+import React from 'react';
+import { View, Text, Button, StyleSheet, Alert } from 'react-native';
+
+export default function App() {
+  return (
+    <View style={styles.container}>
+      
+      {/* Texto */}
+      <Text style={styles.texto}>Bem-vindo!</Text>
+
+      {/* Botão */}
+      <Button 
+        title="Entrar" 
+        onPress={() => Alert.alert("Você clicou em Entrar!")} 
+      />
+
+    </View>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  texto: {
+    fontSize: 24,
+    marginBottom: 20,
+  },
+});
+
+///modifique o app 
+Data:05/05/2026
+Nome: Carlos, Raquel, Felipe
+descrição: codigo de exemplo modificado de acordo com atividade 
+import { Text, View, Button } from 'react-native';
+import { useState } from 'react';
+
+export default function App() {
+const [msg, setMsg] = useState("Olá");
+
+return (
+<View>
+<Text>{msg}</Text>
+<Button
+title="Clique aqui"
+onPress={() => setMsg("Você clicou!")}
+/>
+</View>
+);
+}
